@@ -3,6 +3,7 @@
         ClockOut()
         GetFired()
         Quit()
+        GetPaycheck()
         CallIn()
 }
 
@@ -21,11 +22,11 @@ Class Manager extends Person implements User{
         CreateEvaluation()
         ChangeEvaluation()
         UpdateDemographicsUniversal()
+        ManagePayroll()
 }
 
 
 Class Employee extends Person implements User{
         DoWork()
         FillOutEvalutaion()
-        GetPaycheck()
 }
