@@ -1,7 +1,7 @@
 package basicClassesCoding;
 
 public class Job {
-    // class vairables
+    // class variables
     private String Title;
     private int Experience;
 
