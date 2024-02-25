@@ -1,15 +1,16 @@
 package basicClassesCoding;
-
 public class Person {
     private String name;
     private int age;
+
 
     // default constructor
     public Person() {
     }
 
-    ///// MUTATORS /////
 
+    ///// MUTATORS /////
+    
     // sets name of person
     public void setName(String name) {
         this.name = name;
@@ -21,6 +22,7 @@ public class Person {
     }
 
     ///// END OF MUTATORS /////
+
 
     ///// ACCESSORS /////
 
@@ -35,6 +37,7 @@ public class Person {
     }
 
     ///// END OF ACCESSORS /////
+
 
     ///// METHODS /////
 
