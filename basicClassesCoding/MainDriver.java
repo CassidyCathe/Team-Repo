@@ -19,12 +19,11 @@ public class MainDriver {
         // actor.dislayDetails();
 
 
-        // //hard skills class testing
-        // HardSkill directing = new HardSkill();
-        // directing.setTitle();
-        // directing.setLevel();
-
-        // directing.displayDetails();
+        // hard skills class testing
+         HardSkill directing = new HardSkill();
+         directing.setTitle("C# Programmer");
+         directing.setLevel("Expert");
+         directing.displayDetails();
 
 
     }
