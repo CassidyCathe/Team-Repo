@@ -18,12 +18,12 @@ public class MainDriver {
 
         actor.displayDetails();
 
-        // //hard skills class testing
-        // HardSkill directing = new HardSkill();
-        // directing.setTitle();
-        // directing.setLevel();
+        //hard skills class testing
+        HardSkill directing = new HardSkill();
+        directing.setTitle("Directing");
+        directing.setLevel("Intermediate");
 
-        // directing.displayDetails();
+        directing.displayDetails();
 
     }
 

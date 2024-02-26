@@ -1,5 +1,6 @@
 package basicClassesCoding;
 public class Person {
+    // class variables
     private String name;
     private int age;
 
