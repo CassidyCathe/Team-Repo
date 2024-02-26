@@ -39,6 +39,7 @@ public class Job {
 
     ///// METHODS /////
 
+    // displays the Job Title and Experience Length
     public void displayDetails() {
         System.out.println("--- Job Details ---");
         System.out.println("Job Title: " + Title);
