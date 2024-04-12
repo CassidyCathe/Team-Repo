@@ -11,8 +11,11 @@ abstract class User implements Variables{
     private String password;
     private String workEmail;
     private String personalEmail;
-    private String homePhoneNumber;
     private String workPhoneNumber;
+    private String homePhoneNumber;
+
+    // Maybe add clockedIn and Age
+    
 
     // default constructor
     public User() {
@@ -30,15 +33,15 @@ abstract class User implements Variables{
     //     this.workPhoneNumber = WorkPhoneNumber;
     // }
 
-    public User(String FirstName, String LastName, String Username, String Password, String WorkEmail, String PersonalEmail, String HomePhoneNumber, String WorkPhoneNumber) {
+    public User(String FirstName, String LastName, String Username, String Password, String WorkEmail, String PersonalEmail, String WorkPhoneNumber, String HomePhoneNumber) {
         setFirstName(FirstName);
         setLastName(LastName);
         setUsername(Username);
         setPassword(Password);
         setWorkEmail(WorkEmail);
         setPersonalEmail(PersonalEmail);
-        setHomePhoneNumber(HomePhoneNumber);
         setWorkPhoneNumber(WorkPhoneNumber);
+        setHomePhoneNumber(HomePhoneNumber);
     }
 
     ///// MUTATORS /////
@@ -91,14 +94,14 @@ abstract class User implements Variables{
         this.personalEmail = PersonalEmail;
     }
 
-    public void setHomePhoneNumber(String HomePhoneNumber) {
-        this.homePhoneNumber = HomePhoneNumber;
-    }
-
     public void setWorkPhoneNumber(String WorkPhoneNumber) {
         this.workPhoneNumber = WorkPhoneNumber;
     }
 
+    public void setHomePhoneNumber(String HomePhoneNumber) {
+        this.homePhoneNumber = HomePhoneNumber;
+    }
+    
     ///// END OF MUTATORS /////
 
 
@@ -132,12 +135,12 @@ abstract class User implements Variables{
         return personalEmail;
     }
 
-    public String getHomePhoneNumber(String HomePhoneNumber) {
-        return homePhoneNumber;
-    }
-
     public String getWorkPhoneNumber(String WorkPhoneNumber) {
         return workPhoneNumber;
+    }
+    
+    public String getHomePhoneNumber(String HomePhoneNumber) {
+        return homePhoneNumber;
     }
 
     ///// END OF ACCESSORS /////
