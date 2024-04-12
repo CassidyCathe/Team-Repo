@@ -13,6 +13,8 @@ abstract class User implements Variables{
     private String personalEmail;
     private String workPhoneNumber;
     private String homePhoneNumber;
+
+    // Maybe add clockedIn and Age
     
 
     // default constructor
