@@ -1,7 +1,7 @@
 package RHR_APP;
 import java.util.Scanner;
 
-abstract class User implements Variables{
+abstract class User {
     // class variables
     private Scanner scn = new Scanner(System.in);
     private String firstName;
