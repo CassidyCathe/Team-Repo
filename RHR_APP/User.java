@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 abstract class User implements Variables{
     // class variables
-    private Scanner scn = new Scanner(System.in);
-    private String firstName;
-    private String lastName;
-    private String userID;
-    private String username;
-    private String password;
-    private String workEmail;
-    private String personalEmail;
-    private String workPhoneNumber;
-    private String homePhoneNumber;
+    public Scanner scn = new Scanner(System.in);
+    public String firstName;
+    public String lastName;
+    public String userID;
+    public String username;
+    public String password;
+    public String workEmail;
+    public String personalEmail;
+    public String workPhoneNumber;
+    public String homePhoneNumber;
 
     // Maybe add clockedIn and Age
     
@@ -33,9 +33,10 @@ abstract class User implements Variables{
     //     this.workPhoneNumber = WorkPhoneNumber;
     // }
 
-    public User(String FirstName, String LastName, String Username, String Password, String WorkEmail, String PersonalEmail, String WorkPhoneNumber, String HomePhoneNumber) {
+    public User(String FirstName, String LastName, String UserID, String Username, String Password, String WorkEmail, String PersonalEmail, String WorkPhoneNumber, String HomePhoneNumber) {
         setFirstName(FirstName);
         setLastName(LastName);
+        setUserID(UserID);
         setUsername(Username);
         setPassword(Password);
         setWorkEmail(WorkEmail);
