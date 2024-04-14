@@ -1,18 +1,18 @@
 package RHR_APP;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 abstract class User implements Variables{
     // class variables
-    private Scanner scn = new Scanner(System.in);
-    private String firstName;
-    private String lastName;
-    private String userID;
-    private String username;
-    private String password;
-    private String workEmail;
-    private String personalEmail;
-    private String workPhoneNumber;
-    private String homePhoneNumber;
+    public Scanner scn = new Scanner(System.in);
+    public String firstName;
+    public String lastName;
+    public String classification;
+    public String userID;
+    public String username;
+    public String password;
+    public String workEmail;
+    public String workPhoneNumber;
 
     // Maybe add clockedIn and Age
     
@@ -33,24 +33,26 @@ abstract class User implements Variables{
     //     this.workPhoneNumber = WorkPhoneNumber;
     // }
 
-    public User(String FirstName, String LastName, String Username, String Password, String WorkEmail, String PersonalEmail, String WorkPhoneNumber, String HomePhoneNumber) {
+    public User(String FirstName, String LastName, String Classification, String UserID, String Username, String Password, String WorkEmail, String WorkPhoneNumber) {
         setFirstName(FirstName);
         setLastName(LastName);
+        setClassification(Classification);
+        setUserID(UserID);
         setUsername(Username);
         setPassword(Password);
         setWorkEmail(WorkEmail);
-        setPersonalEmail(PersonalEmail);
         setWorkPhoneNumber(WorkPhoneNumber);
-        setHomePhoneNumber(HomePhoneNumber);
     }
 
     ///// MUTATORS /////
 
     public void setFirstName(String FirstName) {
+        /*
         while (!validName(FirstName)) {
             System.out.println("Invalid. Enter first name again.");
             FirstName = scn.nextLine();
         }
+        */
         this.firstName = FirstName;
     }
 
@@ -62,6 +64,10 @@ abstract class User implements Variables{
         this.lastName = LastName;
     }
 
+    public void setClassification(String Classification) {
+        this.classification = Classification;
+    }
+    
     public void setUserID(String UserID) {
         this.userID = UserID;
     }
@@ -71,7 +77,7 @@ abstract class User implements Variables{
     }
 
     public void setPassword(String Password) {
-        while (!validPassword(password)) {
+        while (!validPassword(Password)) {
             System.out.println("Invalid. Enter password again.");
             Password = scn.nextLine();
         }
@@ -86,20 +92,8 @@ abstract class User implements Variables{
         this.workEmail = WorkEmail;
     }
 
-    public void setPersonalEmail(String PersonalEmail) {
-        while (!validEmail(PersonalEmail)) {
-            System.out.println("Invalid email address. Enter again.");
-            PersonalEmail = scn.nextLine();
-        }
-        this.personalEmail = PersonalEmail;
-    }
-
     public void setWorkPhoneNumber(String WorkPhoneNumber) {
         this.workPhoneNumber = WorkPhoneNumber;
-    }
-
-    public void setHomePhoneNumber(String HomePhoneNumber) {
-        this.homePhoneNumber = HomePhoneNumber;
     }
     
     ///// END OF MUTATORS /////
@@ -113,6 +107,10 @@ abstract class User implements Variables{
 
     public String getLastName(String LastName) {
         return lastName;
+    }
+
+    public String getClassification(String Classification) {
+        return classification;
     }
 
     public String getUserID(String UserID) {
@@ -131,22 +129,17 @@ abstract class User implements Variables{
         return workEmail;
     }
 
-    public String getPersonalEmail(String PersonalEmail) {
-        return personalEmail;
-    }
-
     public String getWorkPhoneNumber(String WorkPhoneNumber) {
         return workPhoneNumber;
     }
     
-    public String getHomePhoneNumber(String HomePhoneNumber) {
-        return homePhoneNumber;
-    }
 
     ///// END OF ACCESSORS /////
 
 
     ///// METHODS /////
+
+    //MORE NEEDED FOR ALL VARIABLES
 
     // Done, needs testing
     private boolean validEmail(String checkEmail) {
