@@ -1,5 +1,6 @@
 package RHR_APP;
 
+import java.util.Scanner;
 
 public class Employee extends User {
     public Employee() {
