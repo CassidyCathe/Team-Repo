@@ -19,12 +19,13 @@ public class TESTLoginGUI {
         //JPanel botPanel = new JPanel();
 
         // Load the image
-        ImageIcon rhrIcon = new ImageIcon("RHR.png"); 
-        ImageIcon scaledIcon = new ImageIcon(rhrIcon.getImage().getScaledInstance(200, 100, Image.SCALE_SMOOTH));
+        ImageIcon rhrIcon = new ImageIcon("ScaledRHR01.png"); 
+        //ImageIcon scaledIcon = new ImageIcon(rhrIcon.getImage().getScaledInstance(200, 100, Image.SCALE_SMOOTH));
        
 
         // Create a JLabel to display the scaled image
-        JLabel iconLabel = new JLabel(scaledIcon);
+        JLabel iconLabel = new JLabel(rhrIcon);
+        //JLabel iconLabel = new JLabel(scaledIcon);
         mainPanel.add(iconLabel, BorderLayout.CENTER);
 
         // Create a JPanel for username and password fields

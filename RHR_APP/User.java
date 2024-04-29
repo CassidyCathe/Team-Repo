@@ -13,6 +13,7 @@ abstract class User implements Variables{
     public String password;
     public String workEmail;
     public String workPhoneNumber;
+    public boolean loggedIn;
 
     // Maybe add clockedIn and Age
     
@@ -95,42 +96,50 @@ abstract class User implements Variables{
     public void setWorkPhoneNumber(String WorkPhoneNumber) {
         this.workPhoneNumber = WorkPhoneNumber;
     }
+
+    public void setLoggedInStatus(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
     
     ///// END OF MUTATORS /////
 
 
     ///// ACCESSORS /////
 
-    public String getFirstName(String FirstName) {
+    public String getFirstName() {
         return firstName;
     }
 
-    public String getLastName(String LastName) {
+    public String getLastName() {
         return lastName;
     }
 
-    public String getClassification(String Classification) {
+    public String getClassification() {
         return classification;
     }
 
-    public String getUserID(String UserID) {
+    public String getUserID() {
         return userID;
     }
 
-    public String getUsername(String Username) {
+    public String getUsername() {
         return username;
     }
 
-    public String getPassword(String Password) {
+    public String getPassword() {
         return password;
     }
 
-    public String getWorkEmail(String WorkEmail) {
+    public String getWorkEmail() {
         return workEmail;
     }
 
-    public String getWorkPhoneNumber(String WorkPhoneNumber) {
+    public String getWorkPhoneNumber() {
         return workPhoneNumber;
+    }
+
+    public boolean getLoggedInStatus() {
+        return loggedIn;
     }
     
 
