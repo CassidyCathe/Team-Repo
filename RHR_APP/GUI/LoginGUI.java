@@ -61,7 +61,7 @@ public class LoginGUI implements ActionListener {
 
     }
 
-    TempArrays loginArrays = new TempArrays();
+    TempArrays loginArrays = new TempArrays();loginArrays.poopulate
 
     @Override // actionperformed method required to implement actionlistener interface
     public void actionPerformed(ActionEvent e) {
