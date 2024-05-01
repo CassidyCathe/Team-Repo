@@ -6,6 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PrimaryGUI implements ActionListener {
+
+    public static void main(String[] args) {
+
+    }
+
     JFrame primaryFrame = new JFrame();
     JTabbedPane primaryTabs = new JTabbedPane();
     JPanel home = new JPanel();
