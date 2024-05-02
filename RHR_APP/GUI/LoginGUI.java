@@ -7,14 +7,15 @@ import RHR_APP.TempArrays;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class LoginGUI implements ActionListener {
     public static void main(String[] args) {
         LoginGUI test = new LoginGUI();
         test.drawLoginGUI();
+
     }
 
+    TempArrays loginArrays = new TempArrays();
     String username;
     String password;
 
@@ -61,7 +62,9 @@ public class LoginGUI implements ActionListener {
 
     }
 
-    TempArrays loginArrays = new TempArrays();loginArrays.poopulate
+    public void arrayDriverForGUI() { // when implemented into main this will be replaced by the instance there
+        loginArrays.populateArrays(loginArrays);
+    }
 
     @Override // actionperformed method required to implement actionlistener interface
     public void actionPerformed(ActionEvent e) {
@@ -74,9 +77,7 @@ public class LoginGUI implements ActionListener {
         }
 
         if ((username.length() > 0) && (password.length() > 0)) {
-            for () {  // Make a nested for loop for looping through the arrays and validating login info 
 
-            }
         }
 
     }
