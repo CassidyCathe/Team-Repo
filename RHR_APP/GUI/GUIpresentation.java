@@ -157,6 +157,11 @@ public class GUIpresentation implements ActionListener {
                 + "\n" + "Phone Number: " + phone);
         account.add(accountDisplay);
 
+        // EVALUATIONS TAB \\
+        JTextArea evaluationsTemp = new JTextArea(
+                "Whenever there are evaluationsto be displayed they will be displayed here");
+        evaluations.add(evaluationsTemp);
+
         /*
          * JButton accountDisplay = new JButton("Display Account"); // creates display
          * account button
@@ -179,7 +184,7 @@ public class GUIpresentation implements ActionListener {
     }
 
     JTextArea displayC = new JTextArea(
-            "Name: Cassidy Larcomb \n Email: cLarcomb@gmail.com \n Phone #: 270-222-3333 \n \n Name: Alexandria Johnson \n Email: aJohnson@gmail.com \n Phone #: 270-333-4444 \n \n Name: Ethan James \n Email: eJames@gmail.com \n Phone #: 270-444-5555");
+            "Name: Cassidy Larcomb \n Email: cLarcomb@gmail.com \n Phone #: 270-222-3333 \n \n  Name: Ethan James \n Email: eJames@gmail.com \n Phone #: 270-444-5555");
 
     void drawCoworkers() { // display coworkers NOT managers
         displayC.setSize(75, 100);
