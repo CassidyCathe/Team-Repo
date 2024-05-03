@@ -84,14 +84,29 @@ public class TempArrays {
         return returnVal;
     }
 
+    public int findUserWithUsername(String userName) {
+        //boolean found = false;
+        int returnVal = arrays.size();
+        for (int i = 0; i < arrays.size(); i++) {
+            if(userName.equals(arrays.get(i)[4])) {
+                //found = true;
+                returnVal = i;
+            }
+        }
+        return returnVal;
+    }
+
     public char findClassification(int arrayIndex) {
-        if(arrays.get(arrayIndex)[2] == "Employee") {
+        if(arrayIndex < 0 || arrayIndex >= arrays.size()){
+            return 'n';
+        }
+        if(arrays.get(arrayIndex)[2].equals("Employee")) {
             return 'e';
         }
-        if(arrays.get(arrayIndex)[2] == "Manager") {
+        if(arrays.get(arrayIndex)[2].equals("Manager")) {
             return 'm';
-        } else {
-            System.out.println("Classification not found.");
+        } 
+        else {
             return 'n';
         }
     }
@@ -110,6 +125,8 @@ public class TempArrays {
         }
     }
 
+    
+    
     public int returnArraySize() {
         return arrays.size();
     }
@@ -120,9 +137,9 @@ public class TempArrays {
 
     public void populateArrays(TempArrays tempArrays) {
         tempArrays.addArray(new String[]{"Seth", "Rogen", "Manager", "45859868", "sRogen", "sethPW_1234", "sRogen@gmail.com", "2701112222"});
-        tempArrays.addArray(new String[]{"Cassidy", "Larcomb", "Employee", "85776935", "cLarcomb", "casPW_1234", "cLarcomb@gmail.com", "2702223333"});
-        tempArrays.addArray(new String[]{"Alexandria", "Johnson", "Employee", "45896712", "aJohnson", "lexPW_1234", "aJohnson@gmail.com", "2703334444"});
-        tempArrays.addArray(new String[]{"Ethan", "James", "Employee", "15425365", "eJames", "ethPW_1234", "eJames@gmail.com", "2704445555"});
+        tempArrays.addArray(new String[]{"Cassidy", "Larcomb", "Employee", "85776935", "cLarcomb", "casPW_1234", "cLarcomb@gmail.com", "2702223333", "4.7", "Employee Evaluation Not Yet Filled Out"});
+        tempArrays.addArray(new String[]{"Alexandria", "Johnson", "Employee", "45896712", "aJohnson", "lexPW_1234", "aJohnson@gmail.com", "2703334444", "4.5", "Employee Evaluation Not Yet Filled Out"});
+        tempArrays.addArray(new String[]{"Ethan", "James", "Employee", "15425365", "eJames", "ethPW_1234", "eJames@gmail.com", "2704445555", "4.4", "Employee Evaluation Not Yet Filled Out"});
     }
 
     public void displayAllEmployees() {
