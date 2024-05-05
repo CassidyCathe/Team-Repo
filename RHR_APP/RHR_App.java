@@ -11,11 +11,11 @@ public class RHR_App {
         Manager managerUser = null; // Empty manager object
         boolean appOn = true;
 
+        tempArrays.populateArrays(tempArrays); // Fills array with our temporary data
         
         while (appOn == true) {
             
-            tempArrays.populateArrays(tempArrays); // Fills array with our temporary data
-        
+
             String[] user = loginMenu(scn, tempArrays, employeeUser, managerUser);
         
             
@@ -65,7 +65,6 @@ public class RHR_App {
                     // If user is a Manager, Manager object is created with the proper data
                     if (tempArrays.findClassification(tempArrays.findUser(userName, passWord)) == 'm') {
                         String[] user = tempArrays.returnItemsInArray(tempArrays.findUser(userName, passWord));
-                        managerUser.setLoggedInStatus(true);
                         return user;
                     }
                     System.out.println("You are now logged in");
@@ -242,14 +241,18 @@ public class RHR_App {
 
             switch (input) {
                 case 1:
+                    // Display User Info
                     user.displayUserInfo();
                     employeeAccountMenu(scn, user, tempArrays, returnMenu);
                     break;
                 case 2:
+                    // Edit User Info
                     user.editUserInfo();
                     employeeAccountMenu(scn, user, tempArrays, returnMenu);
                     break;
                 case 3:
+                    // Delete User
+                    // Ensure user wants to delete account
                     System.out.println("Are you sure you want to delete your account?");
                     System.out.println("1. Yes");
                     System.out.println("2. No");
@@ -257,6 +260,7 @@ public class RHR_App {
                     int input1 = scn.nextInt();
                     switch (input1) {
                         case 1:
+                            // Require admin authorization
                             System.out.println("Admin Authorization Needed to Delete Employee Account");
                             scn.nextLine();
                             System.out.println("Admin Username:");
@@ -271,11 +275,13 @@ public class RHR_App {
                             
                             while (!accepted) {
                                 if (tempArrays.findClassification(tempArrays.findUser(adminUsername, adminPassword)) == 'm') {
+                                    // Delete Account
                                     tempArrays.deleteArrayFromList(tempArrays.findUser(user.getUsername(),user.getPassword()));
                                     logOut(scn, user);
                                     accepted = true;
                                 }
                                 else {
+                                    // Try Again
                                     System.out .println("Admin Authorization Failed");
                                     System.out.println("1. Re-Enter Authorization");
                                     System.out.println("2. Exit");
@@ -309,9 +315,11 @@ public class RHR_App {
                         }
                 break;
                 case 4:
+                    // Logout User
                     logOut(scn, user);
                     break;
                 case 5:
+                    // Return to Previous Menu
                     switch (returnMenu) {
                         case 1:
                         employeeHomeMenu(scn, user, tempArrays);
@@ -343,6 +351,7 @@ public class RHR_App {
             int input = scn.nextInt();
             switch (input) {
                 case 1:
+                    // Displays Employees
                     System.out.print("Exiting Display Menu");
                     employeeEmployeesMenu(scn, user, tempArrays);
                     break;
@@ -352,7 +361,7 @@ public class RHR_App {
             }
         }
 
-        // Employee-Side Evaluation Display Menu, display menu for the Evaluation Menu
+        // UNFINISHED, Evaluation Classes Not Implemented
         static void employeeEvaluationMenu(Scanner scn, Employee user, TempArrays tempArrays) {
             user.displayEvaluation();
             System.out.println();
@@ -455,7 +464,7 @@ public class RHR_App {
             }
         }
 
-        //undone
+        // Manager-Side Evaluation Menu, lets you write evaluation for employees
         static void managerEvaluationsMenu(Scanner scn, Manager user, TempArrays tempArrays) {
             System.out.println("--EVALUATION MENU--");
             System.out.println("Go to different Menu:");
@@ -500,7 +509,7 @@ public class RHR_App {
             
         }
 
-        //done
+        // Manager-Side Account Menu, lets you edit and view your own data
         static void managerAccountMenu(Scanner scn, Manager user, TempArrays tempArrays, int returnMenu) {
             System.out.println("Account Menu:");
             System.out.println("1. Display Account");
@@ -515,14 +524,17 @@ public class RHR_App {
 
             switch (input) {
                 case 1:
+                    // Display User Info
                     user.displayUserInfo();
                     managerAccountMenu(scn, user, tempArrays, returnMenu);
                     break;
                 case 2:
+                    // Edit User Info
                     user.editUserInfo();
                     managerAccountMenu(scn, user, tempArrays, returnMenu);
                     break;
                 case 3:
+                    // Delete User Account
                     System.out.println("Are you sure you want to delete your account?");
                     System.out.println("1. Yes");
                     System.out.println("2. No");
@@ -530,44 +542,7 @@ public class RHR_App {
                     int input1 = scn.nextInt();
                     switch (input1) {
                         case 1:
-                            System.out.println("Enter Password to Delete Account");
-                            scn.nextLine();
-                            String adminUsername = user.getUsername();
-                            System.out.println("Admin Password:");
-                            String adminPassword = scn.next();
-                            System.out.println();
-                            
-                            boolean accepted = false;
-                            
-                            while (!accepted) {
-                                if (tempArrays.findClassification(tempArrays.findUser(adminUsername, adminPassword)) == 'm') {
-                                    tempArrays.deleteArrayFromList(tempArrays.findUser(user.getUsername(),user.getPassword()));
-                                    logOut(scn, user);
-                                    accepted = true;
-                                }
-                                else {
-                                    System.out .println("Incorrect Password");
-                                    System.out.println("1. Re-Enter Password");
-                                    System.out.println("2. Exit");
-                                    System.out.println();
-
-                                    int input2 = scn.nextInt();
-
-                                    switch (input2) {
-                                        case 1:
-                                            scn.nextLine();
-                                            System.out.println("Admin Password:");
-                                            adminPassword = scn.next();
-                                            System.out.println();
-                                            break;
-                                        case 2: 
-                                            accepted = true;
-                                            break;
-                                        default:
-                                            break;
-                                    }
-                                }
-                            }
+                            tempArrays.deleteArrayFromList(tempArrays.findUser(user.getUsername(),user.getPassword()));
                             break;
                         case 2:
                             break;
@@ -577,9 +552,11 @@ public class RHR_App {
                         }
                 break;
                 case 4:
+                    // Logout User
                     logOut(scn, user);
                     break;
                 case 5:
+                    // Return User to Previous Menu
                     switch (returnMenu) {
                         case 1:
                         managerHomeMenu(scn, user, tempArrays);
@@ -602,7 +579,7 @@ public class RHR_App {
             System.out.println("Exiting Account Menu");
         }        
 
-        //
+        // Manager-Side Employee Display Menu, display menu for the Employees Menu
         static void managerDisplayUsersMenu(Scanner scn, Manager user, TempArrays tempArrays) {
             tempArrays.displayAllEmployees();
             System.out.println("User View Menu:");
@@ -647,13 +624,10 @@ public class RHR_App {
             }
         }
 
-        //unfinished, missing evaluation stuff
+        // UNFINISHED, Evaluation Classes Not Implemented
         static void managerEvaluationMenu(Scanner scn, Manager user, TempArrays tempArrays) {
             tempArrays.displayAllEmployees();
             System.out.println("1. Back");
-            System.out.println("2. Back");
-            System.out.println("3. Back");
-            System.out.println("4. Back");
             System.out.println();
             int input = scn.nextInt();
             switch (input) {

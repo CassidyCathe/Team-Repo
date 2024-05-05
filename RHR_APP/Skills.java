@@ -1,6 +1,5 @@
 package RHR_APP;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Skills{

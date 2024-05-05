@@ -136,7 +136,7 @@ public class TempArrays {
     }
 
     public void populateArrays(TempArrays tempArrays) {
-        tempArrays.addArray(new String[]{"Seth", "Rogen", "Manager", "45859868", "sRogen", "sethPW_1234", "sRogen@gmail.com", "2701112222"});
+        tempArrays.addArray(new String[]{"Seth", "Rogen", "Manager", "45859868", "sRogen", "setPW_1234", "sRogen@gmail.com", "2701112222"});
         tempArrays.addArray(new String[]{"Cassidy", "Larcomb", "Employee", "85776935", "cLarcomb", "casPW_1234", "cLarcomb@gmail.com", "2702223333", "4.7", "Employee Evaluation Not Yet Filled Out"});
         tempArrays.addArray(new String[]{"Alexandria", "Johnson", "Employee", "45896712", "aJohnson", "lexPW_1234", "aJohnson@gmail.com", "2703334444", "4.5", "Employee Evaluation Not Yet Filled Out"});
         tempArrays.addArray(new String[]{"Ethan", "James", "Employee", "15425365", "eJames", "ethPW_1234", "eJames@gmail.com", "2704445555", "4.4", "Employee Evaluation Not Yet Filled Out"});
