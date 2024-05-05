@@ -107,6 +107,7 @@ public class TempArrays {
             return 'm';
         } 
         else {
+
             return 'n';
         }
     }
@@ -125,8 +126,6 @@ public class TempArrays {
         }
     }
 
-    
-    
     public int returnArraySize() {
         return arrays.size();
     }

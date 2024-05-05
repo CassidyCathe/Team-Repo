@@ -56,5 +56,6 @@ public class Skills{
         System.out.println();
         System.out.println(skillDetails);
         System.out.println();
+
     }
 }
