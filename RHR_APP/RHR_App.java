@@ -19,14 +19,14 @@ public class RHR_App {
             String[] user = loginMenu(scn, tempArrays, employeeUser, managerUser);
         
             
-            if (user[2] == "Employee") {
+            if (user[2] == "Employee") { // Employee-Side Applicaiton
                 employeeUser = new Employee(user[0], user[1], user[2], user[3], user[4], user[5], user[6], user[7]);
                 employeeUser.setLoggedInStatus(true);
                 System.out.println();
                 while (employeeUser.getLoggedInStatus() == true) {
                     employeeHomeMenu(scn, employeeUser, tempArrays);
                 }
-            } else if (user[2] == "Manager") {
+            } else if (user[2] == "Manager") { // Manager-Side Application
                 managerUser = new Manager(user[0], user[1], user[2], user[3], user[4], user[5], user[6], user[7]);
                 managerUser.setLoggedInStatus(true);
                 System.out.println();
