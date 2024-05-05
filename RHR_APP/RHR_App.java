@@ -1,7 +1,6 @@
 package RHR_APP;
 
 import java.util.Scanner;
-//import java.io.IOException;
 
 public class RHR_App {
     public static void main (String[] args){
@@ -11,40 +10,29 @@ public class RHR_App {
         Employee employeeUser = null; // Empty employee object
         Manager managerUser = null; // Empty manager object
         boolean appOn = true;
-        //char userClassification;
 
-        // Fills array with our temporary data
-        
         
         while (appOn == true) {
             
-
-            tempArrays.populateArrays(tempArrays);
+            tempArrays.populateArrays(tempArrays); // Fills array with our temporary data
         
-
             String[] user = loginMenu(scn, tempArrays, employeeUser, managerUser);
         
             
             if (user[2] == "Employee") {
-                //while (appOn == true) {
-                    //currentMenu = loginMenu(scn, tempArrays, employeeUser, managerUser);
-                    employeeUser = new Employee(user[0], user[1], user[2], user[3], user[4], user[5], user[6], user[7]);
-                    employeeUser.setLoggedInStatus(true);
-                    System.out.println();
-                    while (employeeUser.getLoggedInStatus() == true) {
-                        employeeHomeMenu(scn, employeeUser, tempArrays);
-                    }
-                //}
+                employeeUser = new Employee(user[0], user[1], user[2], user[3], user[4], user[5], user[6], user[7]);
+                employeeUser.setLoggedInStatus(true);
+                System.out.println();
+                while (employeeUser.getLoggedInStatus() == true) {
+                    employeeHomeMenu(scn, employeeUser, tempArrays);
+                }
             } else if (user[2] == "Manager") {
-                //while (appOn == true) {
-                    //menuManager(chce, scn, tempArrays, managerUser);
-                    managerUser = new Manager(user[0], user[1], user[2], user[3], user[4], user[5], user[6], user[7]);
-                    managerUser.setLoggedInStatus(true);
-                    System.out.println();
-                    while (managerUser.getLoggedInStatus() == true) {
-                        managerHomeMenu(scn, managerUser, tempArrays);
-                    }
-                //}
+                managerUser = new Manager(user[0], user[1], user[2], user[3], user[4], user[5], user[6], user[7]);
+                managerUser.setLoggedInStatus(true);
+                System.out.println();
+                while (managerUser.getLoggedInStatus() == true) {
+                    managerHomeMenu(scn, managerUser, tempArrays);
+                }
             }
 
         }
@@ -53,6 +41,7 @@ public class RHR_App {
 
         // LOGIN MENUS
 
+        // Login Method that tells main to either create an Employee or Manager 
         static String[] loginMenu (Scanner scn, TempArrays tempArrays, Employee employeeUser, Manager managerUser) {
             boolean logIn = false;
             
@@ -92,20 +81,21 @@ public class RHR_App {
                 }
             }
 
-            //employeeUser.displayUserInfo();
             System.out.println();
             return null;
         }
 
+        // Logout method for Emplyees
         static void logOut (Scanner scn, Employee user) {
-            user.setLoggedInStatus(false);
+            user.setLoggedInStatus(false); // prompts logout in Main
             System.out.println("Logging Out");
             System.out.println();
             scn.nextLine();
         }
 
+        // Logout method for Managers
         static void logOut (Scanner scn, Manager user) {
-            user.setLoggedInStatus(false);
+            user.setLoggedInStatus(false); // prompts logout in Main
             System.out.println("Logging Out");
             System.out.println();
         }
@@ -113,7 +103,7 @@ public class RHR_App {
 
         // EMPLOYEE MENUS
 
-        //done
+        // Employee-Side Home Menu, acts as gateway to other menus and account menu
         static void employeeHomeMenu (Scanner scn, Employee user, TempArrays tempArrays) {
             System.out.println("--HOME MENU--");
             System.out.println("Go to different Menu:");
@@ -150,7 +140,7 @@ public class RHR_App {
             }
         }
 
-        //done
+        // Employee-Side Employees Menu, shows coworkers and managers info
         static void employeeEmployeesMenu (Scanner scn, Employee user, TempArrays tempArrays) {
             System.out.println("--EMPLOYEES MENU--");
             System.out.println("Go to different Menu:");
@@ -192,7 +182,7 @@ public class RHR_App {
             }
         }
 
-        //done
+        // Employee-Side Evaluation Menu, shows your personal evaluation
         static void employeeEvaluationsMenu(Scanner scn, Employee user, TempArrays tempArrays) {
             System.out.println("--EVALUATION MENU--");
             System.out.println("Go to different Menu:");
@@ -237,7 +227,7 @@ public class RHR_App {
             
         }
 
-        //done
+        // Employee-Side Account Menu, lets you edit and view your own data
         static void employeeAccountMenu(Scanner scn, Employee user, TempArrays tempArrays, int returnMenu) {
             System.out.println("Account Menu:");
             System.out.println("1. Display Account");
@@ -344,7 +334,7 @@ public class RHR_App {
             System.out.println("Exiting Account Menu");
         }
 
-        //done
+        // Employee-Side Employee Display Menu, display menu for the Employees Menu
         static void employeeDisplayUsersMenu(Scanner scn, Employee user, TempArrays tempArrays) {
             tempArrays.displayAllEmployees();
             System.out.println("User View Menu:");
@@ -362,7 +352,7 @@ public class RHR_App {
             }
         }
 
-        //unfinished, missing evaluation stuff
+        // Employee-Side Evaluation Display Menu, display menu for the Evaluation Menu
         static void employeeEvaluationMenu(Scanner scn, Employee user, TempArrays tempArrays) {
             user.displayEvaluation();
             System.out.println();
@@ -386,7 +376,7 @@ public class RHR_App {
 
         // MANAGER MENUS
 
-        //done
+        // Manager-Side Home Menu, acts as gateway to other menus and account menu
         static void managerHomeMenu (Scanner scn, Manager user, TempArrays tempArrays) {
             System.out.println("--HOME MENU--");
             System.out.println("Go to different Menu:");
@@ -423,7 +413,7 @@ public class RHR_App {
             }
         }
 
-        //done
+        // Manager-Side Employees Menu, shows employees and fellow managers info
         static void managerEmployeesMenu (Scanner scn, Manager user, TempArrays tempArrays) {
             System.out.println("--EMPLOYEES MENU--");
             System.out.println("Go to different Menu:");
