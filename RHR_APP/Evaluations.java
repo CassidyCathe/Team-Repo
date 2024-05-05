@@ -1,6 +1,5 @@
 package RHR_APP;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Evaluations{
@@ -41,9 +40,10 @@ public class Evaluations{
 
     public void displayEvaluation(){
         System.out.println(this.evaluationScore);
-        System.out.println("");
+        System.out.println();
         System.out.println(this.evaluationDetails);
-        System.out.println("");
+        System.out.println();
+
     }
 
 

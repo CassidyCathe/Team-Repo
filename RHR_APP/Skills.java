@@ -1,6 +1,5 @@
 package RHR_APP;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Skills{
@@ -52,10 +51,11 @@ public class Skills{
 
     public void displaySkillInfo(){
         System.out.println(skillName);
-        System.out.println("");
+        System.out.println();
         System.out.println(skillProficency);
-        System.out.println("");
+        System.out.println();
         System.out.println(skillDetails);
-        System.out.println("");
+        System.out.println();
+
     }
 }

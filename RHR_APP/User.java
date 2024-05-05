@@ -1,8 +1,7 @@
 package RHR_APP;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-abstract class User implements Variables{
+abstract class User{
     // class variables
     public Scanner scn = new Scanner(System.in);
     public String firstName;
@@ -13,7 +12,7 @@ abstract class User implements Variables{
     public String password;
     public String workEmail;
     public String workPhoneNumber;
-    public boolean loggedIn;
+    public boolean loggedIn = false;
 
     // Maybe add clockedIn and Age
     
@@ -150,6 +149,77 @@ abstract class User implements Variables{
 
     //MORE NEEDED FOR ALL VARIABLES
 
+    public void displayUserInfo() {
+        System.out.print(this.firstName);
+        System.out.print(" ");
+        System.out.print(this.lastName);
+        System.out.print(" ");
+        System.out.print(this.classification);
+        System.out.print(" ");
+        System.out.print(this.userID);
+        System.out.print(" ");
+        System.out.print(this.username);
+        System.out.print(" ");
+        System.out.print(this.password);
+        System.out.print(" ");
+        System.out.print(this.workEmail);
+        System.out.print(" ");
+        System.out.print(this.workPhoneNumber);
+        System.out.println();
+    }
+    
+    public void editUserInfo() {
+        System.out.println("Edit User Info:");
+        System.out.println("1. First Name");
+        System.out.println("2. Last Name");
+        System.out.println("3. Username");
+        System.out.println("4. Password");
+        System.out.println("5. Work Email");
+        System.out.println("6. Work Phone Number");
+        System.out.println("7. Exit Account Edit Menu");
+        
+        int input = scn.nextInt();
+        
+            switch (input) {
+                case 1:
+                    System.out.println("Enter New First Name");
+                    setFirstName(scn.nextLine());
+                    break;
+                case 2:
+                    System.out.println("Enter New Last Name");
+                    setLastName(scn.nextLine());
+                    break;
+                case 3:
+                    System.out.println("Enter New Username");
+                    setUsername(scn.nextLine());
+                    break;
+                case 4:
+                    System.out.println("Enter New Password");
+                    setPassword(scn.nextLine());
+                    break;
+                case 5:
+                    System.out.println("Enter New Work Email");
+                    setWorkEmail(scn.nextLine());
+                    break;
+                case 6:
+                    System.out.println("Enter New Work Phone Number");
+                    setWorkPhoneNumber(scn.nextLine());
+                    break;
+                case 7:
+                    System.out.println("Exiting Account Edit Menu");
+                    break;
+                default:
+                    System.out.println("Invalid Input");
+                    System.out.println();
+                    editUserInfo();
+                    break;
+            }
+
+        
+        
+    }
+
+
     // Done, needs testing
     private boolean validEmail(String checkEmail) {
         boolean passes = true;
@@ -245,34 +315,3 @@ abstract class User implements Variables{
 
 
 
-
-/* SCRAPYARD
-
-old checkpassword
-// if (checkPassword.length() >= 6) {
-        //     pass = false;
-        // } else {
-        //     while ((i < checkPassword.length()) &&
-        //             !(specialCharacterExists && uppercaseExists && 
-        //             numericCharacterExists && lowercaseExists)) {
-        //         c = checkPassword.charAt(i);
-        //         ascii = (int)c;
-        //         if ((ascii > 122 && ascii < 127) || (ascii > 90 && ascii < 97)
-        //                 || (ascii > 57 && ascii < 65) || (ascii > 31 && ascii < 48)) {
-        //             specialCharacterExists = true;
-        //         } else if (ascii > 64 && ascii < 91) {
-        //             uppercaseExists = true;
-        //         } else if (ascii > 96 && ascii < 123) {
-        //             lowercaseExists = true;
-        //         } else if (ascii > 47 && ascii < 58) {
-        //             numericCharacterExists = true;
-        //         }
-        //         i++;
-        //     }
-        // }
-        // if (specialCharacterExists && uppercaseExists 
-        //         && lowercaseExists && numericCharacterExists) {
-        //     pass = true;
-        // }
-
-        */
